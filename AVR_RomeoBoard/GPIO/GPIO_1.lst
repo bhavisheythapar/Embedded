@@ -1,0 +1,164 @@
+   1               		.file	"GPIO_1.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 42E0      		ldi r20,lo8(2)
+  25 0002 50E0      		ldi r21,hi8(2)
+  26               	.LVL0:
+  27               	.LBB21:
+  28               	.LM3:
+  29 0004 61E0      		ldi r22,lo8(1)
+  30 0006 70E0      		ldi r23,hi8(1)
+  31               	.L2:
+  32 0008 2AB1      		in r18,42-32
+  33 000a CB01      		movw r24,r22
+  34 000c 042E      		mov r0,r20
+  35 000e 00C0      		rjmp 2f
+  36 0010 880F      	1:	lsl r24
+  37 0012 991F      		rol r25
+  38 0014 0A94      	2:	dec r0
+  39 0016 02F4      		brpl 1b
+  40 0018 282B      		or r18,r24
+  41 001a 2AB9      		out 42-32,r18
+  42               	.LM4:
+  43 001c 4F5F      		subi r20,lo8(-(1))
+  44 001e 5F4F      		sbci r21,hi8(-(1))
+  45 0020 4830      		cpi r20,8
+  46 0022 5105      		cpc r21,__zero_reg__
+  47 0024 01F4      		brne .L2
+  48               	.LBE21:
+  49               	.LBB22:
+  50               	.LM5:
+  51 0026 209A      		sbi 36-32,0
+  52 0028 219A      		sbi 36-32,1
+  53               	.LBE22:
+  54               	.LBB23:
+  55               	.LBB31:
+  56               	.LBB32:
+  57               	.LBB33:
+  58               	.LBB34:
+  59               	.LM6:
+  60 002a A0E4      		ldi r26,lo8(-25536)
+  61 002c BCE9      		ldi r27,hi8(-25536)
+  62               	.LBE34:
+  63               	.LBE33:
+  64               	.LBE32:
+  65               	.LBE31:
+  66               	.LBB24:
+  67               	.LBB25:
+  68               	.LBB26:
+  69               	.LBB27:
+  70 002e 60E9      		ldi r22,lo8(400)
+  71 0030 71E0      		ldi r23,hi8(400)
+  72               	.LVL1:
+  73               	.L7:
+  74               	.LBE27:
+  75               	.LBE26:
+  76               	.LBE25:
+  77               	.LBE24:
+  78               	.LBE23:
+  79               	.LM7:
+  80 0032 1BB8      		out 43-32,__zero_reg__
+  81               	.LM8:
+  82 0034 15B8      		out 37-32,__zero_reg__
+  83 0036 21E0      		ldi r18,lo8(1)
+  84 0038 30E0      		ldi r19,hi8(1)
+  85 003a 44E0      		ldi r20,lo8(4)
+  86               	.LVL2:
+  87               	.L6:
+  88               	.LBB40:
+  89               	.LM9:
+  90 003c 2536      		cpi r18,101
+  91 003e 3105      		cpc r19,__zero_reg__
+  92 0040 04F0      		brlt .L3
+  93 0042 80E1      		ldi r24,lo8(10000)
+  94 0044 97E2      		ldi r25,hi8(10000)
+  95               	.LVL3:
+  96               	.L4:
+  97               	.LBB38:
+  98               	.LBB30:
+  99               	.LBB29:
+ 100               	.LBB28:
+ 101               	.LM10:
+ 102 0046 FB01      		movw r30,r22
+ 103               	/* #APP */
+ 104               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 105 0048 3197      		1: sbiw r30,1
+ 106 004a 01F4      		brne 1b
+ 107               	 ;  0 "" 2
+ 108               	/* #NOAPP */
+ 109               	.LBE28:
+ 110               	.LBE29:
+ 111               	.LM11:
+ 112 004c 0197      		sbiw r24,1
+ 113               	.LM12:
+ 114 004e 01F4      		brne .L4
+ 115 0050 00C0      		rjmp .L5
+ 116               	.LVL4:
+ 117               	.L3:
+ 118               	.LBE30:
+ 119               	.LBE38:
+ 120               	.LBB39:
+ 121               	.LBB37:
+ 122               	.LBB36:
+ 123               	.LBB35:
+ 124               	.LM13:
+ 125 0052 CD01      		movw r24,r26
+ 126               	.LVL5:
+ 127               	/* #APP */
+ 128               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 129 0054 0197      		1: sbiw r24,1
+ 130 0056 01F4      		brne 1b
+ 131               	 ;  0 "" 2
+ 132               	.LVL6:
+ 133               	/* #NOAPP */
+ 134               	.L5:
+ 135               	.LBE35:
+ 136               	.LBE36:
+ 137               	.LBE37:
+ 138               	.LBE39:
+ 139               	.LM14:
+ 140 0058 C901      		movw r24,r18
+ 141               	.LVL7:
+ 142 005a 56E0      		ldi r21,6
+ 143 005c 9595      	1:	asr r25
+ 144 005e 8795      		ror r24
+ 145 0060 5A95      		dec r21
+ 146 0062 01F4      		brne 1b
+ 147 0064 85B9      		out 37-32,r24
+ 148               	.LM15:
+ 149 0066 4BB9      		out 43-32,r20
+ 150               	.LM16:
+ 151 0068 2F5F      		subi r18,lo8(-(1))
+ 152 006a 3F4F      		sbci r19,hi8(-(1))
+ 153 006c 4C5F      		subi r20,lo8(-(4))
+ 154 006e 81E0      		ldi r24,hi8(257)
+ 155 0070 2130      		cpi r18,lo8(257)
+ 156 0072 3807      		cpc r19,r24
+ 157 0074 01F4      		brne .L6
+ 158 0076 00C0      		rjmp .L7
+ 159               	.LBE40:
+ 160               	.LFE6:
+ 186               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 GPIO_1.c
+C:\Users\bhavi\AppData\Local\Temp/ccIgr1bl.s:2      *ABS*:0000003f __SREG__
+C:\Users\bhavi\AppData\Local\Temp/ccIgr1bl.s:3      *ABS*:0000003e __SP_H__
+C:\Users\bhavi\AppData\Local\Temp/ccIgr1bl.s:4      *ABS*:0000003d __SP_L__
+C:\Users\bhavi\AppData\Local\Temp/ccIgr1bl.s:5      *ABS*:00000034 __CCP__
+C:\Users\bhavi\AppData\Local\Temp/ccIgr1bl.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\bhavi\AppData\Local\Temp/ccIgr1bl.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\bhavi\AppData\Local\Temp/ccIgr1bl.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS
