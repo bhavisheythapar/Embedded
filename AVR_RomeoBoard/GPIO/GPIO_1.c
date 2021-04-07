@@ -44,10 +44,7 @@ int main (void)
 		PORTB = 0;
 		for (int counter = 1; counter <= 256; counter++)
 		{
-		    if (counter>100)
-                _delay_ms(1000);
-		    else
-		        _delay_ms(10);
+            _delay_ms(100);
 			PORTB = counter/64;
 			PORTD = counter*4;
 		}
