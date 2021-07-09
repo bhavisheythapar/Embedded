@@ -20,9 +20,10 @@ void delay_ms (uint16_t);
 void transmitString(char*);
 void printCR();
 void printR();
+void printM(float);
+test
 
-
-        int main(void)
+int main(void)
 {
     initPowerControl();
     initUSART();
@@ -32,13 +33,14 @@ void printR();
     float T_measured=0;
     float e=0;
     float u=0;
-    float K_p=200;
+    float K_p=20;
     PWM(0);
 
     while (1)
     {
         T_measured=voltageToTemp(analog(channel));
-        print(T_measured,T_desired);
+        printM(T_measured);
+//        print(T_measured,T_desired);
         e=T_desired - T_measured;
         u=K_p*e;
         if (u>255)
@@ -124,6 +126,13 @@ void print(float t_measured,float t_desired) {
     transmitString(t_m);
     printCR();
     printCR();
+}
+
+void printM(float t_measured) {
+    char t_m[20];
+    sprintf(t_m,"%f",t_measured);
+    transmitString(t_m);
+    printR();
 }
 
 void printCR() {
